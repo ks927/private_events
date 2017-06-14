@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
     
-  get '/signin', to: 'users#new'
+  get '/signup', to: 'users#new'
 
-  post '/signin', to: 'users#create'
+  post '/signup', to: 'users#create'
 
-  get  '/user',   to: 'users#show'
+  resources :users
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
