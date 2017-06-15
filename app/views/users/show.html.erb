@@ -2,4 +2,10 @@
 
 <p>This is your profile page</p>
 
-
+<ul class="events">
+    <% @user.events.each do |event| %>
+   <li>
+     <%= event.name %> 
+   </li>
+    <% end %>
+</ul>

@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   root 'index#home'
 
-  get '/signup', to: 'users#new'
-
-  post '/signup', to: 'users#create'
+  get '/signup',    to: 'users#new'
+  post '/signup',   to: 'users#create'
+  delete 'signout', to: 'users#delete'
 
   resources :users, only: [:new, :create, :show]
   resources :events, only: [:new, :create, :index]

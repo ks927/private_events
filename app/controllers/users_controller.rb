@@ -15,7 +15,18 @@ class UsersController < ApplicationController
 
   def show
       @user = User.find(params[:id])
-      @event = @user.events
+      @events = @user.events
+  end
+    
+  def delete
+     if signed_in? 
+       sign_out @user
+       flash[:success] = "You are signed out!"
+       redirect_to root_url
+     else
+       flash[:info] = "You need to be signed in to sign out!"
+       redirect_to root_url
+     end
   end
     
     private

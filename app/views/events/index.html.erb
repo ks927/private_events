@@ -1,9 +1,11 @@
 <h1>Events</h1>
 
-<ul class="event">
+<ul class="events">
     <% @events.each do |event| %>
     
-    <li>Event: <%= event.name %></li>
+    <li>Event: <%= event.name %> <br>
+        Hosted by: <%= event.creator.name %>
+    </li>
     
     <% end %>
 </ul>
