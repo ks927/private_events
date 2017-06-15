@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
      @current_user ||= User.find_by(id: cookies.signed[:user_id]) 
   end
     
+  def signed_in?
+     !current_user.nil? 
+  end
+    
 end
