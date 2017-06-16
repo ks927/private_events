@@ -1,7 +1,15 @@
-<h1><%= current_user.name %>'s Events </h1>
+<h1><%= @event.name %></h1>
 
-<ul>
-<li><%= @event.name %></li>
-   
-</ul>
+<h3>Hosted by <%= current_user.name %></h3>
+
+<p>Current list of attendees:</p>
+
+<% if @event.attendees.any? %>
+  <ul>
+  <% @event.attendees.each do |attendee| %>
+
+  <li><%= attendee %></li>
+  <% end %>
+  </ul>
+<% end %>
 
