@@ -4,4 +4,10 @@ class Event < ApplicationRecord
     has_many :attendees, :through => :attendances, source: :attendee
     
     validates :name, presence: true
+    validates :date, presence: true
+    
+    # Scope past and upcoming
+    # scope :upcoming, {} 
+    
+    
 end

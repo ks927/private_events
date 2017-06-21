@@ -1,18 +1,32 @@
 <h1>Welcome <%= @user.name %></h1>
 
-<p>You are currently hosting:</p>
+<p>Your upcoming events:</p>
 
 <ul class="events">
-    <% @user.events.each do |event| %>
+<% if @upcoming_events.any? %>
+    <% @upcoming_events.each do |event| %>
    <li>
      <%= link_to event.name, event_path(event) %>
        
    </li>
     <% end %>
+<% end %>
 </ul>
 
-<p>You are currently attending:</p>
+<p>Your previous events:</p>
 
+<ul class="events">
+<% if @prev_events.any? %>
+    <% @prev_events.each do |event| %>
+   <li>
+     <%= link_to event.name, event_path(event) %>
+       
+   </li>
+    <% end %>
+<% end %>
+</ul>
+
+<p>Events you are attending:</p>
 <ul class="events">
     <% @attended_events.each do |event| %>
    <li>
