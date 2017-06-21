@@ -10,3 +10,14 @@
    </li>
     <% end %>
 </ul>
+
+<p>You are currently attending:</p>
+
+<ul class="events">
+    <% @attended_events.each do |event| %>
+   <li>
+     <%= link_to event.name, event_path %>
+       
+   </li>
+    <% end %>
+</ul>

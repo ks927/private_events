@@ -4,9 +4,9 @@
 
 <p>Current list of attendees:</p>
 
-<% if @event.attendees.any? %>
+<% if @attendees.any? %>
   <ul>
-  <% @event.attendees.each do |attendee| %>
+  <% @attendees.each do |attendee| %>
 
   <li><%= attendee %></li>
   <% end %>
