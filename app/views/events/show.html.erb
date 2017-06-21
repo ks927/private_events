@@ -9,7 +9,9 @@
   <% @attendees.each do |attendee| %>
 
   <li><%= attendee %></li>
-  <% end %>
   </ul>
+  <% end %>
+<% else %>
+      <p>No attendees yet</p>
 <% end %>
 

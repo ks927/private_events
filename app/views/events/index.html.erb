@@ -3,8 +3,8 @@
 <ul class="events">
     <% @events.each do |event| %>
     
-    <li>Event: <%= event.name %> <br>
-        Hosted by: <%= event.creator.name %>
+    <li>Event: <%= link_to event.name, event_path(event) %> <br>
+        Hosted by: <%= link_to event.creator.name, user_path(event.creator) %>
     </li>
     
     <% end %>
