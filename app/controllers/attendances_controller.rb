@@ -5,7 +5,8 @@ class AttendancesController < ApplicationController
       attendance = current_user.attendances.build(attended_event_id: @event_id)
       if attendance.save
           flash[:success] = "Attending this event!"
-          redirect :back
+          current_user.attend!(@event)
+          redirect_to @event
       end
   end
     

@@ -1,6 +1,6 @@
 <h1><%= @event.name %></h1>
 
-<h3>Hosted by <%= link_to current_user.name, user_path(current_user) %></h3>
+<h3>Hosted by <%= link_to @event.creator.name, user_path(@event.creator) %></h3>
 <datetime>Date: <%= @event.date %></datetime>
 
 <% if @event.date > Date.today %>
@@ -14,9 +14,9 @@
 
 <% if @attendees.any? %>
   <ul>
-  <% @attendees.each do |attendee| %>
+  <% @event.attendees.each do |attendee| %>
 
-  <li><%= attendee %></li>
+  <li><%= link_to attendee.name, attendee %></li>
   </ul>
   <% end %>
 <% else %>

@@ -6,10 +6,19 @@ class User < ApplicationRecord
     validates :name, presence: true
     
     def upcoming_events
-       self.events.where("date > ?", Date.today)
+       self.attended_events.where("date > ?", Date.today)
     end
     
     def previous_events
-       self.events.where("date < ?", Date.today) 
+       self.attended_events.where("date < ?", Date.today) 
     end
+    
+    def attend!(event)
+        self.attendances.create!(attended_event_id: event.id)
+    end
+    
+    def attending?(event)
+       event.attendees.include?(self) 
+    end
+    
 end
