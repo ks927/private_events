@@ -7,8 +7,16 @@ body {
     font-family: "Benton Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 }
 
-h1 {
+.title {
     text-align: center;
+    border: 1px solid #e8e8e8;
+    height: 200px;
+    font-size: 1.5em;
+    margin: 50px;
+}
+
+.title p {
+    color: darkolivegreen;
 }
 
 /* Navigation */
@@ -21,12 +29,12 @@ h1 {
   color: #666a73;
   height: 60px;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: bold;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-@media only screen and (max-width: 529px) {
+@media only screen and (max-width: 551px) {
     .navbar {
         height: 120px
     }
