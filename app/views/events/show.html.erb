@@ -10,14 +10,15 @@
   <% end %>
 <% end %>
 
+<div class="attending">
 <p>Current list of attendees:</p>
 
-  <ul>
+  <ol>
   <% @attendees.each do |attendee| %>
-
   <li><%= link_to attendee.name, user_path(attendee) %></li>
-  </ul>
   <% end %>
-<% else %>
+  </ol>
+</div>
+  
 
 

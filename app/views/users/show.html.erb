@@ -26,13 +26,21 @@
 <% end %>
 </ul>
 
-<p>Events you are hosting:</p>
-<ul class="events">
 <% if @events.any? %>
-    <% @events.each do |event| %>
-   <li>
-      <%= link_to event.name, event_path(event) %>
-   </li>
-</ul>
+  <% @events.each do |event| %>
+    <% if event.date >= Date.today %>
+      <p>Events you are hosting:</p>
+        <ul class="events">
+          <li>
+          <%= link_to event.name, event_path(event) %>
+         </li>
+    <% elsif event.date <= Date.today %>
+      <p>Events you hosted:</p>
+        <ul class="events">
+          <li>
+          <%= link_to event.name, event_path(event) %>
+         </li>
+    <% end %>
+        </ul>
   <% end %>
 <% end %>
