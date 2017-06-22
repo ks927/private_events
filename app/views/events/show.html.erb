@@ -3,23 +3,21 @@
 <h3>Hosted by <%= link_to @event.creator.name, user_path(@event.creator) %></h3>
 <datetime>Date: <%= @event.date %></datetime>
 
-<% if @event.date > Date.today %>
-  <%= form_for(current_user.attendances.build(attended_event_id: @event.id)) do |f| %>
-    <%= f.hidden_field :attended_event_id, value: @event.id %>
+<% if @event.date >= Date.today %>
+  <%= form_for(current_user.attendances.build(event_id: @event.id)) do |f| %>
+    <%= f.hidden_field :event_id, value: @event.id %>
     <%= f.submit "Attend Event" %>
   <% end %>
 <% end %>
 
 <p>Current list of attendees:</p>
 
-<% if @attendees.any? %>
   <ul>
-  <% @event.attendees.each do |attendee| %>
+  <% @attendees.each do |attendee| %>
 
-  <li><%= link_to attendee.name, attendee %></li>
+  <li><%= link_to attendee.name, user_path(attendee) %></li>
   </ul>
   <% end %>
 <% else %>
-      <p>No attendees yet</p>
-<% end %>
+
 
