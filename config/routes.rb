@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
     
-
-  get 'attendances/create'
-
   root 'index#home'
 
   get '/signup',    to: 'users#new'
