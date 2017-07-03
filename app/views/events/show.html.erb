@@ -4,10 +4,7 @@
 <datetime>Date: <%= @event.date %></datetime>
 
 <% if !current_user.nil? && @event.date >= Date.today %>
-  <%= form_for(current_user.attendances.build(event_id: @event.id)) do |f| %>
-    <%= f.hidden_field :event_id, value: @event.id %>
-    <%= f.submit "Attend Event" %>
-  <% end %>
+  <%= render 'form' %>
 <% end %>
 
 <div class="attending">
