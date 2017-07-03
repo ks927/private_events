@@ -2,23 +2,9 @@
 
 <h3>Upcoming Events</h3>
 <ul class="events">
-    <% @upcoming_events.each do |event| %>
-    
-    <li>Event: <%= link_to event.name, event_path(event) %> <br>
-        Hosted by: <%= link_to event.creator.name, user_path(event.creator) %> <br>
-        Date: <%= event.date %>
-    </li>
-    
-    <% end %>
+    <%= render 'upcoming' %>
 </ul>
 <h3>Past Events</h3>
 <ul class="events">
-    <% @past_events.each do |event| %>
-    
-    <li>Event: <%= link_to event.name, event_path(event) %> <br>
-        Hosted by: <%= link_to event.creator.name, user_path(event.creator) %>  <br>
-        Date: <%= event.date %>
-    </li>
-    
-    <% end %>
+    <%= render 'past' %>
 </ul>
