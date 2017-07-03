@@ -1,4 +1,11 @@
-<%= form_for(current_user.attendances.build(event_id: @event.id)) do |f| %>
-    <%= f.hidden_field :event_id, value: @event.id %>
-    <%= f.submit "Attend Event" %>
-  <% end %>
+<%= form_for(:event, url: events_path) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+
+  <%= f.submit "Create" %>
+
+<% end %>
