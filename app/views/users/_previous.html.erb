@@ -1,0 +1,8 @@
+<% if @prev_events.any? %>
+    <% @prev_events.each do |event| %>
+   <li>
+     <%= link_to event.name, event_path(event) %>
+       
+   </li>
+    <% end %>
+<% end %>

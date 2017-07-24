@@ -3,27 +3,13 @@
 <p>Your upcoming events:</p>
 
 <ul class="events">
-<% if @upcoming_events.any? %>
-    <% @upcoming_events.each do |event| %>
-   <li>
-     <%= link_to event.name, event_path(event) %>
-       
-   </li>
-    <% end %>
-<% end %>
+<%= render 'upcoming' %>
 </ul>
 
 <p>Your previous events:</p>
 
 <ul class="events">
-<% if @prev_events.any? %>
-    <% @prev_events.each do |event| %>
-   <li>
-     <%= link_to event.name, event_path(event) %>
-       
-   </li>
-    <% end %>
-<% end %>
+<%= render 'previous' %>
 </ul>
 
 <% if @events.any? %>
