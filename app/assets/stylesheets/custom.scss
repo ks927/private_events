@@ -9,10 +9,12 @@ body {
 
 .title {
     text-align: center;
-    border: 1px solid #e8e8e8;
     height: 200px;
     font-size: 1.5em;
     margin: 50px;
+    background: lightyellow;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 .title p {
